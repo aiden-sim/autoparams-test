@@ -1,6 +1,5 @@
 package com.aiden.domain;
 
-import com.aiden.domain.enums.CampaignType;
 import com.aiden.domain.enums.UserStatus;
 import com.aiden.domain.vo.Budget;
 import lombok.AllArgsConstructor;
