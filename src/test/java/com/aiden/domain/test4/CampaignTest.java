@@ -59,14 +59,14 @@ class CampaignTest {
     @ParameterizedTest
     @MethodAutoSource("generateMethod")
     void 특정_캠페인_타입과_예산_고정(
-            Budget freeBudget,
+            Budget freezeBudget,
             CampaignTypeGoal freezeCampaignTypeGoal,
             Factory<Campaign> campaignFactory) {
 
         // given
         campaignFactory.applyCustomizer(
                 CampaignGenerator.builder()
-                        .freezeBudget(freeBudget)
+                        .freezeBudget(freezeBudget)
                         .freezeCampaignTypeGoal(freezeCampaignTypeGoal)
                         .build()
         );
