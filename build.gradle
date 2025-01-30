@@ -24,6 +24,10 @@ repositories {
 dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.36'
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testImplementation 'io.github.autoparams:autoparams:9.0.0'
+    testImplementation 'io.github.autoparams:autoparams-lombok:9.0.0'
 }
 
 tasks.named('test') {
