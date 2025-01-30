@@ -1,4 +1,4 @@
-package com.aiden.domain.generator;
+package com.aiden.domain.test4.generator;
 
 import autoparams.customization.CompositeCustomizer;
 

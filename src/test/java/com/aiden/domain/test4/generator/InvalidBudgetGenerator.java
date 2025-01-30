@@ -1,4 +1,4 @@
-package com.aiden.domain.generator;
+package com.aiden.domain.test4.generator;
 
 import autoparams.ObjectQuery;
 import autoparams.ResolutionContext;
@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class InvalidBudgetGenerator extends ObjectGeneratorBase<Budget> {
-    private static final int MIN_BUDGET = Integer.MIN_VALUE;
-    private static final int MAX_BUDGET = Integer.MAX_VALUE;
+    private static final Long MIN_BUDGET = Long.MIN_VALUE;
+    private static final Long MAX_BUDGET = Long.MAX_VALUE;
 
     @Override
     protected Budget generateObject(ObjectQuery query, ResolutionContext context) {

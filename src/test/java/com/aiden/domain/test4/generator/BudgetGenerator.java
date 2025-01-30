@@ -1,4 +1,4 @@
-package com.aiden.domain.generator;
+package com.aiden.domain.test4.generator;
 
 import autoparams.ObjectQuery;
 import autoparams.ResolutionContext;
@@ -12,12 +12,16 @@ public class BudgetGenerator extends ObjectGeneratorBase<Budget> {
     @Override
     protected Budget generateObject(ObjectQuery query, ResolutionContext context) {
         LocalDateTime dailyBudgetOverDttm = context.resolve(LocalDateTime.class);
+        Long dailyBudget = generateBudget();
 
-        ThreadLocalRandom random = ThreadLocalRandom.current();
-        Long dailyBudget = random.nextLong(Budget.DAILY_BUDGET_MIN, Budget.DAILY_BUDGET_MAX);
         return Budget.builder()
                 .dailyBudget(dailyBudget)
                 .dailyBudgetOverDttm(dailyBudgetOverDttm)
                 .build();
+    }
+
+    private Long generateBudget() {
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        return random.nextLong(Budget.DAILY_BUDGET_MIN, Budget.DAILY_BUDGET_MAX);
     }
 }

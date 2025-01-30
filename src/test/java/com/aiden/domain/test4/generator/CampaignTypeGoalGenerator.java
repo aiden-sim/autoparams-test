@@ -1,4 +1,4 @@
-package com.aiden.domain.generator;
+package com.aiden.domain.test4.generator;
 
 import autoparams.ObjectQuery;
 import autoparams.ResolutionContext;
@@ -14,14 +14,17 @@ public class CampaignTypeGoalGenerator extends ObjectGeneratorBase<CampaignTypeG
     @Override
     protected CampaignTypeGoal generateObject(ObjectQuery query, ResolutionContext context) {
         CampaignType campaignType = context.resolve(CampaignType.class);
-
-        ThreadLocalRandom random = ThreadLocalRandom.current();
-        List<CampaignGoal> goals = campaignType.getGoals();
-        CampaignGoal campaignGoal = goals.get(random.nextInt(goals.size()));
+        CampaignGoal campaignGoal = generateCampaignGoal(campaignType);
 
         return CampaignTypeGoal.builder()
                 .campaignType(campaignType)
                 .campaignGoal(campaignGoal)
                 .build();
+    }
+
+    private CampaignGoal generateCampaignGoal(CampaignType campaignType) {
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        List<CampaignGoal> goals = campaignType.getGoals();
+        return goals.get(random.nextInt(goals.size()));
     }
 }
