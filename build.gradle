@@ -28,11 +28,11 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.36'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
 
+    testImplementation 'org.assertj:assertj-core:3.27.3'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testImplementation 'ch.qos.logback:logback-classic:1.5.16'
     testImplementation 'io.github.autoparams:autoparams:9.0.0'
     testImplementation 'io.github.autoparams:autoparams-lombok:9.0.0'
-    testImplementation 'org.assertj:assertj-core:3.27.3'
-    testImplementation 'ch.qos.logback:logback-classic:1.5.16'
 }
 
 tasks.named('test') {
