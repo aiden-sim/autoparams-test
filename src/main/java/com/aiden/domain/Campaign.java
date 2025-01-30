@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class Campaign {
     private Long id;
     private Budget budget;
-    private CampaignType campaignType;
+    private CampaignTypeGoal campaignTypeGoal;
     private UserStatus userStatus;
     private LocalDateTime updatedDate;
     private LocalDateTime createdDate;

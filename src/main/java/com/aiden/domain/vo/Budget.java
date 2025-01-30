@@ -1,15 +1,13 @@
 package com.aiden.domain.vo;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Builder
 @ToString
+@EqualsAndHashCode
 @AllArgsConstructor
 public class Budget {
     public static final long DAILY_BUDGET_MIN = 10_000;
