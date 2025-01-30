@@ -7,14 +7,12 @@ import com.aiden.domain.Campaign;
 import com.aiden.domain.enums.CampaignType;
 import com.aiden.domain.enums.UserStatus;
 import com.aiden.domain.vo.Budget;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Builder
-@AllArgsConstructor
 public class CampaignGenerator extends ObjectGeneratorBase<Campaign> {
     private Long freezeId;
     private Budget freezeBudget;
@@ -39,12 +37,6 @@ public class CampaignGenerator extends ObjectGeneratorBase<Campaign> {
                 .userStatus(Objects.nonNull(freezeUserStatus) ? freezeUserStatus : userStatus)
                 .updatedDate(Objects.nonNull(freezeUpdatedDate) ? freezeUpdatedDate : updatedDate)
                 .createdDate(Objects.nonNull(freezeCreatedDate) ? freezeCreatedDate : createdDate)
-                .build();
-    }
-
-    public static CampaignGenerator freezeCampaignType(CampaignType freezeCampaignType) {
-        return CampaignGenerator.builder()
-                .freezeCampaignType(freezeCampaignType)
                 .build();
     }
 }

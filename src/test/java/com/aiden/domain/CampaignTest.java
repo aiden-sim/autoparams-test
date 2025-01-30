@@ -5,7 +5,6 @@ import autoparams.Repeat;
 import autoparams.customization.Customization;
 import autoparams.generator.Factory;
 import com.aiden.domain.enums.CampaignType;
-import com.aiden.domain.enums.UserStatus;
 import com.aiden.domain.generator.BudgetGenerator;
 import com.aiden.domain.generator.CampaignGenerator;
 import com.aiden.domain.generator.InvalidBudgetGenerator;
@@ -36,7 +35,8 @@ class CampaignTest {
     void 특정_캠페인_타입_고정(Factory<Campaign> campaignFactory) {
         // given
         CampaignType freezeCampaignType = CampaignType.DISPLAY;
-        campaignFactory.applyCustomizer(CampaignGenerator.freezeCampaignType(freezeCampaignType));
+        campaignFactory.applyCustomizer(
+                CampaignGenerator.builder().freezeCampaignType(freezeCampaignType).build());
 
         // when
         Campaign campaign = campaignFactory.get();
