@@ -66,8 +66,8 @@ class CampaignTest {
         // given
         campaignFactory.applyCustomizer(
                 CampaignGenerator.builder()
-                        .freezeCampaignTypeGoal(freezeCampaignTypeGoal)
                         .freezeBudget(freeBudget)
+                        .freezeCampaignTypeGoal(freezeCampaignTypeGoal)
                         .build()
         );
 
