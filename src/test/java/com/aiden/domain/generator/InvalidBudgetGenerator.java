@@ -16,8 +16,10 @@ public class InvalidBudgetGenerator extends ObjectGeneratorBase<Budget> {
     protected Budget generateObject(ObjectQuery query, ResolutionContext context) {
         Long dailyBudget = generateInvalidBudget();
         LocalDateTime dailyBudgetOverDttm = context.resolve(LocalDateTime.class);
-
-        return new Budget(dailyBudget, dailyBudgetOverDttm);
+        return Budget.builder()
+                .dailyBudget(dailyBudget)
+                .dailyBudgetOverDttm(dailyBudgetOverDttm)
+                .build();
     }
 
     private Long generateInvalidBudget() {

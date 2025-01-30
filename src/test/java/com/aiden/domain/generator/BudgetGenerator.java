@@ -15,6 +15,9 @@ public class BudgetGenerator extends ObjectGeneratorBase<Budget> {
 
         ThreadLocalRandom random = ThreadLocalRandom.current();
         Long dailyBudget = random.nextLong(Budget.DAILY_BUDGET_MIN, Budget.DAILY_BUDGET_MAX);
-        return new Budget(dailyBudget, dailyBudgetOverDttm);
+        return Budget.builder()
+                .dailyBudget(dailyBudget)
+                .dailyBudgetOverDttm(dailyBudgetOverDttm)
+                .build();
     }
 }

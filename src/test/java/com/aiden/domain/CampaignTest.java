@@ -3,7 +3,11 @@ package com.aiden.domain;
 import autoparams.AutoSource;
 import autoparams.Repeat;
 import autoparams.customization.Customization;
+import autoparams.generator.Factory;
+import com.aiden.domain.enums.CampaignType;
+import com.aiden.domain.enums.UserStatus;
 import com.aiden.domain.generator.BudgetGenerator;
+import com.aiden.domain.generator.CampaignGenerator;
 import com.aiden.domain.generator.InvalidBudgetGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
@@ -23,6 +27,23 @@ class CampaignTest {
     void 기본_검증(Campaign campaign) {
         log.info("campaign : {}", campaign);
         assertThat(campaign).isNotNull();
+    }
+
+    @Repeat(10)
+    @AutoSource
+    @ParameterizedTest
+    @Customization(BudgetGenerator.class)
+    void 특정_캠페인_타입_고정(Factory<Campaign> campaignFactory) {
+        // given
+        CampaignType freezeCampaignType = CampaignType.DISPLAY;
+        campaignFactory.applyCustomizer(CampaignGenerator.freezeCampaignType(freezeCampaignType));
+
+        // when
+        Campaign campaign = campaignFactory.get();
+        log.info("campaign : {}", campaign);
+
+        // then
+        assertThat(campaign.getCampaignType()).isEqualTo(freezeCampaignType);
     }
 
     @AutoSource
