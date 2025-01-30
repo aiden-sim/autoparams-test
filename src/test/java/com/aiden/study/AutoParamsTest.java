@@ -1,10 +1,11 @@
-package com.aiden.domain.study;
+package com.aiden.study;
 
 import autoparams.AutoSource;
 import autoparams.CsvAutoSource;
 import autoparams.MethodAutoSource;
 import autoparams.ValueAutoSource;
 import autoparams.customization.Freeze;
+import com.aiden.study.ValueContainer;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

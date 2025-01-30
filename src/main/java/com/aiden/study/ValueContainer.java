@@ -1,4 +1,4 @@
-package com.aiden.domain.study;
+package com.aiden.study;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
