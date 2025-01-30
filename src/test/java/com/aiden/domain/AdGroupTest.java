@@ -14,30 +14,30 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
-@DisplayName("캠페인")
-class CampaignTest {
+@DisplayName("광고그룹")
+class AdGroupTest {
 
     @Repeat(10)
     @AutoSource
     @ParameterizedTest
-    void 기본_검증(Campaign campaign) {
-        log.info("campaign : {}", campaign);
-        assertThat(campaign).isNotNull();
+    void 기본_검증(AdGroup adGroup) {
+        log.info("adGroup : {}", adGroup);
+        assertThat(adGroup).isNotNull();
     }
 
     @AutoSource
     @ParameterizedTest
     @Customization(BudgetGenerator.class)
-    void 유효한_일예산(Campaign campaign) {
-        log.info("campaign : {}", campaign);
-        assertTrue(campaign.getBudget().validBudget());
+    void 유효한_일예산(AdGroup adGroup) {
+        log.info("adGroup : {}", adGroup);
+        assertTrue(adGroup.getBudget().validBudget());
     }
 
     @AutoSource
     @ParameterizedTest
     @Customization(InvalidBudgetGenerator.class)
-    void 잘못된_일예산(Campaign campaign) {
-        log.info("campaign : {}", campaign);
-        assertFalse(campaign.getBudget().validBudget());
+    void 잘못된_일예산(AdGroup adGroup) {
+        log.info("adGroup : {}", adGroup);
+        assertFalse(adGroup.getBudget().validBudget());
     }
 }
